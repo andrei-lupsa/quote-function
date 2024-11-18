@@ -1,0 +1,24 @@
+### GET all quotes as event stream
+GET localhost:9102
+Accept: text/event-stream
+
+### GET random quote
+GET localhost:9102/randomQuote
+
+### GET (using POST) random quote by genre
+POST localhost:9102/genreQuote
+
+FANTASY
+
+### Chain function calls
+POST localhost:9102/genreQuote,logQuote
+
+FANTASY
+
+### Send Cloud Events request ???
+POST localhost:9102/genreQuote
+ce-specversion:1.0
+ce-type:quote
+ce-id:394
+
+FANTASY
